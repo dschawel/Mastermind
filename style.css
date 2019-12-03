@@ -1,0 +1,165 @@
+body {
+    display: flex;
+}
+
+h1 {
+    font-family: 'Wallpoet';
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Wallpoet'
+}
+
+h3 {
+    font-family: 'Wallpoet';
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+p {
+    margin: 10px;
+    padding: 10px;
+}
+
+#gameboard {
+    height: 730px;
+    width: 600px;
+    background-color: #A2A3A4;
+    display: grid;
+    grid-template-columns: repeat(9, 65px);
+    grid-template-rows: repeat(11, 65px);
+    text-align: center;
+    justify-content: center;
+}
+
+#hide {
+    margin: 10px auto;
+    justify-content: center;
+}
+
+#submit {
+    margin: 10px auto;
+    justify-content: center;
+}
+
+#replay {
+    margin: 10px auto;
+    justify-content: center;
+}
+
+#instructions {
+    justify-content: flex-end;
+    height: 1000px;
+    width: 1000px;
+}
+
+/*
+#red {
+    background-color: #A2A3A4;
+    color: #FF0000;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#blue {
+    background-color: #A2A3A4;
+    color: #0000FF;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#green {
+    background-color: #A2A3A4;
+    color: #00FF00;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#yellow {
+    background-color: #A2A3A4;
+    color: #FFFF00;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#brown {
+    background-color: #A2A3A4;
+    color: #654321;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#white {
+    background-color: #A2A3A4;
+    color: #FFFFFF;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 100px;
+}
+
+#red-peg {
+    background-color: #FF0000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#blue-peg {
+    background-color: #0000FF;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#green-peg {
+    background-color: #00FF00;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#yellow-peg {
+    background-color: #FFFF00;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#brown-peg {
+    background-color: #654321;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#white-peg {
+    background-color: #FFFFFF;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*
+.hovered {
+    background-color: #A2A3A4;
+}
+*/

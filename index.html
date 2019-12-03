@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
+    <title>Mastermind</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div>
+        <h1>Mastermind</h1>
+            <div id="gameboard">
+                <div id="row1col1"><h2>M</h2></div>
+                <div id="row1col2"><h5 id="col2" data-index = 0>⚫️</h5></div>
+                <div id="row1col3"><h5 id="col3" data-index = 0>⚫️</h5></div>
+                <div id="row1col4"><h5 id="col4" data-index = 0>⚫️</h5></div>
+                <div id="row1col5"><h5 id="col5" data-index = 0>⚫️</h5></div>
+                <div id="row1col6"><h5 id="col6" data-index = 0>⚫️</h5></div>
+                <div id="row1col7"><h5 id="col7" data-index = 0>⚫️</h5></div>
+                <div id="row1col8"><h5 id="col8" data-index = 0>⚫️</h5></div>
+                <div id="row1col9"><h5 id="col9" data-index = 0>⚫️</h5></div>
+                <div id="row2col1"><h2>A</h2></div>
+                <div id="row2col2"><h5 id="r2c2" data-index = 0>⚫️</h5></div>
+                <div id="row2col3"><h5 id="r2c3" data-index = 0>⚫️</h5></div>
+                <div id="row2col4"><h5 id="r2c4" data-index = 0>⚫️</h5></div>
+                <div id="row2col5"><h5 id="r2c5" data-index = 0>⚫️</h5></div>
+                <div id="row2col6"><h5 id="r2c6" data-index = 0>⚫️</h5></div>
+                <div id="row2col7"><h5 id="r2c7" data-index = 0>⚫️</h5></div>
+                <div id="row2col8"><h5 id="r2c8" data-index = 0>⚫️</h5></div>
+                <div id="row2col9"><h5 id="r2c9" data-index = 0>⚫️</h5></div>
+                <div id="row3col1"><h2>S</h2></div>
+                <div id="row3col2"><h5 id="r3c2" data-index = 0>⚫️</h5></div>
+                <div id="row3col3"><h5 id="r3c3" data-index = 0>⚫️</h5></div>
+                <div id="row3col4"><h5 id="r3c4" data-index = 0>⚫️</h5></div>
+                <div id="row3col5"><h5 id="r3c5" data-index = 0>⚫️</h5></div>
+                <div id="row3col6"><h5 id="r3c6" data-index = 0>⚫️</h5></div>
+                <div id="row3col7"><h5 id="r3c7" data-index = 0>⚫️</h5></div>
+                <div id="row3col8"><h5 id="r3c8" data-index = 0>⚫️</h5></div>
+                <div id="row3col9"><h5 id="r3c9" data-index = 0>⚫️</h5></div>
+                <div id="row4col1"><h2>T</h2></div>
+                <div id="row4col2"><h5 id="r4c2" data-index = 0>⚫️</h5></div>
+                <div id="row4col3"><h5 id="r4c3" data-index = 0>⚫️</h5></div>
+                <div id="row4col4"><h5 id="r4c4" data-index = 0>⚫️</h5></div>
+                <div id="row4col5"><h5 id="r4c5" data-index = 0>⚫️</h5></div>
+                <div id="row4col6"><h5 id="r4c6" data-index = 0>⚫️</h5></div>
+                <div id="row4col7"><h5 id="r4c7" data-index = 0>⚫️</h5></div>
+                <div id="row4col8"><h5 id="r4c8" data-index = 0>⚫️</h5></div>
+                <div id="row4col9"><h5 id="r4c9" data-index = 0>⚫️</h5></div>
+                <div id="row5col1"><h2>E</h2></div>
+                <div id="row5col2"><h5 id="r5c2" data-index = 0>⚫️</h5></div>
+                <div id="row5col3"><h5 id="r5c3" data-index = 0>⚫️</h5></div>
+                <div id="row5col4"><h5 id="r5c4" data-index = 0>⚫️</h5></div>
+                <div id="row5col5"><h5 id="r5c5" data-index = 0>⚫️</h5></div>
+                <div id="row5col6"><h5 id="r5c6" data-index = 0>⚫️</h5></div>
+                <div id="row5col7"><h5 id="r5c7" data-index = 0>⚫️</h5></div>
+                <div id="row5col8"><h5 id="r5c8" data-index = 0>⚫️</h5></div>
+                <div id="row5col9"><h5 id="r5c9" data-index = 0>⚫️</h5></div>
+                <div id="row6col1"><h2>R</h2></div>
+                <div id="row6col2"><h5 id="r6c2" data-index = 0>⚫️</h5></div>
+                <div id="row6col3"><h5 id="r6c3" data-index = 0>⚫️</h5></div>
+                <div id="row6col4"><h5 id="r6c4" data-index = 0>⚫️</h5></div>
+                <div id="row6col5"><h5 id="r6c5" data-index = 0>⚫️</h5></div>
+                <div id="row6col6"><h5 id="r6c6" data-index = 0>⚫️</h5></div>
+                <div id="row6col7"><h5 id="r6c7" data-index = 0>⚫️</h5></div>
+                <div id="row6col8"><h5 id="r6c8" data-index = 0>⚫️</h5></div>
+                <div id="row6col9"><h5 id="r6c9" data-index = 0>⚫️</h5></div>
+                <div id="row7col1"><h2>M</h2></div>
+                <div id="row7col2"><h5 id="r7c2" data-index = 0>⚫️</h5></div>
+                <div id="row7col3"><h5 id="r7c3" data-index = 0>⚫️</h5></div>
+                <div id="row7col4"><h5 id="r7c4" data-index = 0>⚫️</h5></div>
+                <div id="row7col5"><h5 id="r7c5" data-index = 0>⚫️</h5></div>
+                <div id="row7col6"><h5 id="r7c6" data-index = 0>⚫️</h5></div>
+                <div id="row7col7"><h5 id="r7c7" data-index = 0>⚫️</h5></div>
+                <div id="row7col8"><h5 id="r7c8" data-index = 0>⚫️</h5></div>
+                <div id="row7col9"><h5 id="r7c9" data-index = 0>⚫️</h5></div>
+                <div id="row8col1"><h2>I</h2></div>
+                <div id="row8col2"><h5 id="r8c2" data-index = 0>⚫️</h5></div>
+                <div id="row8col3"><h5 id="r8c3" data-index = 0>⚫️</h5></div>
+                <div id="row8col4"><h5 id="r8c4" data-index = 0>⚫️</h5></div>
+                <div id="row8col5"><h5 id="r8c5" data-index = 0>⚫️</h5></div>
+                <div id="row8col6"><h5 id="r8c6" data-index = 0>⚫️</h5></div>
+                <div id="row8col7"><h5 id="r8c7" data-index = 0>⚫️</h5></div>
+                <div id="row8col8"><h5 id="r8c8" data-index = 0>⚫️</h5></div>
+                <div id="row8col9"><h5 id="r8c9" data-index = 0>⚫️</h5></div>
+                <div id="row9col1"><h2>N</h2></div>
+                <div id="row9col2"><h5 id="r9c2" data-index = 0>⚫️</h5></div>
+                <div id="row9col3"><h5 id="r9c3" data-index = 0>⚫️</h5></div>
+                <div id="row9col4"><h5 id="r9c4" data-index = 0>⚫️</h5></div>
+                <div id="row9col5"><h5 id="r9c5" data-index = 0>⚫️</h5></div>
+                <div id="row9col6"><h5 id="r9c6" data-index = 0>⚫️</h5></div>
+                <div id="row9col7"><h5 id="r9c7" data-index = 0>⚫️</h5></div>
+                <div id="row9col8"><h5 id="r9c8" data-index = 0>⚫️</h5></div>
+                <div id="row9col9"><h5 id="r9c9" data-index = 0>⚫️</h5></div>
+                <div id="row10col1"><h2>D</h2></div>
+                <div id="row10col2"><h5 id="r10c2" data-index = 0>⚫️</h5></div>
+                <div id="row10col3"><h5 id="r10c3" data-index = 0>⚫️</h5></div>
+                <div id="row10col4"><h5 id="r10c4" data-index = 0>⚫️</h5></div>
+                <div id="row10col5"><h5 id="r10c5" data-index = 0>⚫️</h5></div>
+                <div id="row10col6"><h5 id="r10c6" data-index = 0>⚫️</h5></div>
+                <div id="row10col7"><h5 id="r10c7" data-index = 0>⚫️</h5></div>
+                <div id="row10col8"><h5 id="r10c8" data-index = 0>⚫️</h5></div>
+                <div id="row10col9"><h5 id="r10c9" data-index = 0>⚫️</h5></div>
+                <div id="row11col1"><h2>CODE</h2></div>
+                <div id="row11col2"><h5 id="code1" data-index="0">⚫️</h5></div>
+                <div id="row11col3"><h5 id="code2" data-index = 0>⚫️</h5></div>
+                <div id="row11col4"><h5 id="code3" data-index = 0>⚫️</h5></div>
+                <div id="row11col5"><h5 id="code4" data-index = 0>⚫️</h5></div>
+                <div id="row11col6"><button type="button" id="hide">Hide</button><button type="button" id="reveal">Reveal</button></div>
+                <button type="button" id="submit">Submit</button><button type="button" id="replay">Replay</button>
+            </div>
+        </div>
+        <div id="instructions">
+            <div>
+                <h1>Instructions</h1>
+                    <p>Player One will set a code of four colored (red, blue, green, yellow) pegs in the CODE line by clicking on the black circles and selecting a color.  Once they have the code they want they will click submit to hide their code.  Player Two then has ten turns to guess the code. Player Two will guess by clicking on the first four black circles to select their colors and then click submit.  After each guess from Player Two, Player One will click on the last four circles and display a white peg if they have a correct color but in the wrong location, a brown peg if they have a correct color in the correct place, or a black peg if a peg is not correct and then click submit.</p>
+            </div>
+            <h3 id="message"></p>
+        </div>
+    <script src="./script.js"></script>
+</body>
+</html>
