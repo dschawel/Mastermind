@@ -19,6 +19,7 @@ const checkForWin = () => {
             wins = true
             document.getElementById('message').textContent = "Congratulations, you cracked the code!"
             showCode()
+            document.getElementById('WinSound').play()
         } else {
             return false
         }
@@ -29,7 +30,6 @@ const checkForWin = () => {
 
 //Setting up turns 
 const turns = () => {
-    // if(wins == false){
     if (turn % 2 === 0) {
         document.getElementById('message').textContent = "Player Two's turn." 
         // checkForWin(arrPlayerTwo, 'playerTwo')
