@@ -35,18 +35,53 @@ p {
 }
 
 #hide {
+    font-family: 'Wallpoet';
     margin: 10px auto;
     justify-content: center;
+}
+
+#hide:hover {
+    background-color: #FF0000;
+    border-radius: 5px;
+}
+
+#reveal {
+    font-family: 'Wallpoet';
+    margin: 5px auto;
+    justify-content: center;
+}
+
+#reveal:hover {
+    background-color: #00FF00;
+    border-radius: 5px;
 }
 
 #submit {
+    font-family: 'Wallpoet';
     margin: 10px auto;
+    border-radius: 5px;
     justify-content: center;
 }
 
+#submit:hover {
+    background-color: #FFFF00;
+    border-radius: 5px;
+}
+
 #replay {
+    font-family: 'Wallpoet';
     margin: 10px auto;
+    border-radius: 5px;
     justify-content: center;
+}
+
+#replay:hover {
+    background-color: #0000FF;
+    border-radius: 5px;
+}
+
+h5:hover {
+    cursor: pointer;
 }
 
 #instructions {

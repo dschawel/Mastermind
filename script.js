@@ -2,18 +2,36 @@
 let turn = 1
 let playerOne
 let playerTwo
-let arrPlayerTwo = []
-let codeColors = ['🔴', '🔵', '🟢', '🟡']
-let answerColors = ['🟤', '⚪️', '⚫️']
-let win
+let code = {}
+let codeColors = ["🔴", "🔵", "🟢", "🟡"]
+let answerColors = ["🟤", "⚪️", "⚫️"]
+let win = ["🟤", "🟤", "🟤", "🟤"]
+let codeWin = []
+let wins = false
+
+
+const checkForWin = () => {
+    //Taking the values from the code object and placing them in the codeWin array
+    //If win is true, display the win message
+    let codeWin = Object.values(code)
+    for (let i = 0; i < win.length; i++) {
+        if (codeWin[i] == win[i] && codeWin.length == win.length) {
+            wins = true
+            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
+            showCode()
+        } else {
+            return false
+        }
+    }    
+    console.log(codeWin)
+    console.log(win)
+}
 
 //Setting up turns 
-const turns = (e) => {
+const turns = () => {
+    // if(wins == false){
     if (turn % 2 === 0) {
-        document.getElementById('message').textContent = "Player Two's turn."
-        // let choice = document.getElementById(e.target.id).getAttribute('data-index')
-        // console.log(choice)
-        
+        document.getElementById('message').textContent = "Player Two's turn." 
         // checkForWin(arrPlayerTwo, 'playerTwo')
     } else if (turn % 2 !== 0) {
         if (turn === 1) {
@@ -22,12 +40,13 @@ const turns = (e) => {
             document.getElementById('message').textContent = "Player One, set your answer pegs"
         }
     }
-    //Iterating through turns and displaying message that Player Two did not crack the code
+    //Iterating through turns and if turn is greater than 22 display message that Player Two did not crack the code
     turn++
     if (turn > 22) {
-        document.getElementById('message').innerHTML = "You did not crack the code. Player One wins."
-    }   
-}
+        document.getElementById('message').textContent = "You did not crack the code. Player One wins."
+    }
+    }  
+
 
 //Set submit button to hide the code
 const hideCode = () => {
@@ -42,19 +61,20 @@ document.getElementById('hide').addEventListener('click', hideCode)
 
 //Setting up the submit button
 const submitGuess = () => {
+    //Checking for win, if the code is not correct, go to next turn and reset the code objec
     turns()
+    checkForWin()
+    code = {}
 }
 //Adding event listener to the submit button and running the submitGuess function
 document.getElementById('submit').addEventListener('click', submitGuess)
 
-// //Setting up the replay button
-// const replayGame = () => {
-//     if (turn > 1) {
-//         turn = 1
-//     }
-// }
-// //Adding event listener to replay button
-// document.getElementById('replay').addEventListener('click', replayGame)
+//Setting up the replay button
+const replayGame = () => {
+    window.location.reload()
+}
+//Adding event listener to replay button
+document.getElementById('replay').addEventListener('click', replayGame)
 
 //Set the Reveal button to show the code
 const showCode = () => {
@@ -65,8 +85,9 @@ const showCode = () => {
 }
 document.getElementById('reveal').addEventListener('click', showCode)
 
-//Setting function so player can guess a color
+//Setting function so player can guess a color on each black circle
 const guessCode = e => {
+    //Setting up a way to loop through each color when the black circles are clicked
     let index = document.getElementById(e.target.id).getAttribute('data-index')
     index = parseInt(index) + 1
     if (index >= codeColors.length) {
@@ -74,16 +95,6 @@ const guessCode = e => {
     }
     document.getElementById(e.target.id).textContent = codeColors[index]  
     document.getElementById(e.target.id).setAttribute('data-index', index)
-    for (let i = 0; i < codeColors.length; i++) {
-        if (codeColors[i] === 0) {
-            codeColors.splice([i], 0)
-            console.log(codeColors)
-        }
-    }
-    arrPlayerTwo.push(codeColors[index])
-    console.log(arrPlayerTwo)
-    // console.log('this is the id', e.target.id)
-    // console.log(codeColors[index])
 }
 
 //Setting event listeners for the black circles so the player can guess.  Not DRY hoping to clean up later
@@ -128,7 +139,7 @@ document.getElementById('r10c3').addEventListener('click', guessCode)
 document.getElementById('r10c4').addEventListener('click', guessCode)
 document.getElementById('r10c5').addEventListener('click', guessCode)
 
-//Setting up the function to give the answer pegs
+//Setting up the function to allow the player to cycle through the answer colors
 const getAnswer = e => {
     let index = document.getElementById(e.target.id).getAttribute('data-index')
     index = parseInt(index) + 1
@@ -137,6 +148,8 @@ const getAnswer = e => {
     }
     document.getElementById(e.target.id).textContent = answerColors[index]
     document.getElementById(e.target.id).setAttribute('data-index', index)
+    //Taking the current value of e.target.id and index at that id and pushing it to the empty code object
+    code[e.target.id] = answerColors[index]
 }
 
 //Setting event listeners for answer slots. Not DRY, hope to clean it up later
@@ -198,7 +211,14 @@ document.getElementById('code2').addEventListener('click', setCode)
 document.getElementById('code3').addEventListener('click', setCode)
 document.getElementById('code4').addEventListener('click', setCode)
 
+//Setting up the DOM & calling the turns function
+document.addEventListener('DOMContentLoaded', () => {
+    turns()
+})
 
+
+
+//Realized I didn't need to go through finding all the combinations
 //Setting the function to check for win scenario
 // const checkForWin = (code) => {
 //     let possibleWins = [
@@ -216,11 +236,6 @@ document.getElementById('code4').addEventListener('click', setCode)
 //         }
 //     }
 // }   
-
-//Setting up the DOM & calling the turns function
-document.addEventListener('DOMContentLoaded', () => {
-    turns()
-})
 
 // tried to do drag and drop, this was my code
 // const pegs = document.querySelectorAll('.peg')
@@ -271,3 +286,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //         empty.addEventListener('dragleave', dragLeave)
 //         empty.addEventListener('drop', dragDrop)
 //     }
+
+
