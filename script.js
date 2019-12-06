@@ -8,25 +8,6 @@ let answerColors = ["🟤", "⚪️", "⚫️"]
 let win = ["🟤", "🟤", "🟤", "🟤"]
 let codeWin = []
 
-
-const checkForWin = () => {
-    //Taking the values from the code object and placing them in the codeWin array
-    //If win is true, display the win message
-    let codeWin = Object.values(code)
-    for (let i = 0; i < win.length; i++) {
-        if (codeWin[i] == win[i] && codeWin.length == win.length) {
-            wins = true
-            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
-            showCode()
-            document.getElementById('WinSound').play()
-        } else {
-            return false
-        }
-    }    
-    console.log(codeWin)
-    console.log(win)
-}
-
 //Setting up turns 
 const turns = () => {
     if (turn % 2 === 0) {
@@ -212,6 +193,25 @@ document.getElementById('code2').addEventListener('click', setCode)
 document.getElementById('code3').addEventListener('click', setCode)
 document.getElementById('code4').addEventListener('click', setCode)
 
+const checkForWin = () => {
+    //Taking the values from the code object and placing them in the codeWin array
+    //If win is true, display the win message
+    let codeWin = Object.values(code)
+    for (let i = 0; i < codeWin.length; i++) {
+        if (codeWin[i] == win[i] && codeWin.length === win.length) {
+            if (win == true)
+            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
+            showCode()
+            document.getElementById('WinSound').play()
+            console.log(codeWin)
+            console.log(win)
+        // } else {
+        //     return false
+        // }
+        }    
+    }
+}
+
 //Setting up the DOM & calling the turns function
 document.addEventListener('DOMContentLoaded', () => {
     turns()
@@ -287,5 +287,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //         empty.addEventListener('dragleave', dragLeave)
 //         empty.addEventListener('drop', dragDrop)
 //     }
-
-
