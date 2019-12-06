@@ -199,18 +199,19 @@ const checkForWin = () => {
     let codeWin = Object.values(code)
     for (let i = 0; i < codeWin.length; i++) {
         if (codeWin[i] == win[i] && codeWin.length === win.length) {
-            if (win == true)
-            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
-            showCode()
-            document.getElementById('WinSound').play()
             console.log(codeWin)
             console.log(win)
-        // } else {
-        //     return false
-        // }
-        }    
-    }
+        } else {
+            return false
+        }
+        // Code only reached if true
+        document.getElementById('message').textContent = "Congratulations, you cracked the code!"
+        showCode()
+        document.getElementById('WinSound').play()  
+    }    
 }
+
+
 
 //Setting up the DOM & calling the turns function
 document.addEventListener('DOMContentLoaded', () => {
