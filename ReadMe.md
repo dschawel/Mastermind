@@ -1,7 +1,7 @@
 # Mastermind
 
 ## Instructions
-Player One will set a code and click hide to hide their code.  Then Player Two will try to guess the code by clicking on the first four black circles.  When they are satisfied with their guess, they will click the submit button.  Then Player One will click on the last four black circles in the line to let Player Two know how they did.  A white peg signifies a correct color but in a wrong location.  A brown peg signifies a correct color in a correct location.  A black peg signifies that anything remaining is not correct. Once the answer pegs are shown, Player One will click submit.  Play continues Player Two guesses the code or runs out of turns.
+Player One will set a code and click hide to hide their code.  Then Player Two will try to guess the code by clicking on the first four black circles.  When they are satisfied with their guess, they will click the submit button.  Then Player One will click on the last four black circles in the line to let Player Two know how they did.  A white peg signifies a correct color but in a wrong location.  A brown peg signifies a correct color in a correct location.  A black peg signifies that anything remaining is not correct. Once the answer pegs are shown, Player One will click submit.  Play continues until Player Two guesses the code or runs out of turns.
 
 ## Getting Started
 To get started on playing Mastermind:
