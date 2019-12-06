@@ -7,7 +7,6 @@ let codeColors = ["🔴", "🔵", "🟢", "🟡"]
 let answerColors = ["🟤", "⚪️", "⚫️"]
 let win = ["🟤", "🟤", "🟤", "🟤"]
 let codeWin = []
-let wins = false
 
 
 const checkForWin = () => {
