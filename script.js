@@ -198,16 +198,16 @@ const checkForWin = () => {
     //If win is true, display the win message
     let codeWin = Object.values(code)
     for (let i = 0; i < codeWin.length; i++) {
-        if (codeWin[i] === win[i] && codeWin.length === win.length) {
+        if (codeWin[i] !== win[i] && codeWin.length !== win.length) {
+            return false
+        } else {
             console.log(codeWin)
             console.log(win)
             // Code only reached if true
             document.getElementById('message').textContent = "Congratulations, you cracked the code!"
             showCode()
-            document.getElementById('WinSound').play()  
-        } else {
-            return false
-        }
+            document.getElementById('WinSound').play() 
+        } 
     }    
 }
 
