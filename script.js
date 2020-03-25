@@ -47,6 +47,7 @@ const submitGuess = () => {
     turns()
     checkForWin()
     code = {}
+    console.log(code)
 }
 //Adding event listener to the submit button and running the submitGuess function
 document.getElementById('submit').addEventListener('click', submitGuess)
@@ -198,16 +199,16 @@ const checkForWin = () => {
     //If win is true, display the win message
     let codeWin = Object.values(code)
     for (let i = 0; i < codeWin.length; i++) {
-        if (codeWin[i] !== win[i] && codeWin.length !== win.length) {
-            return false
-        } else {
+        if (codeWin[i] === win[i] && codeWin.length === win.length) {
             console.log(codeWin)
             console.log(win)
-            // Code only reached if true
-            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
-            showCode()
-            document.getElementById('WinSound').play() 
-        } 
+        } else {
+            return false
+        }
+        // Code only reached if true
+        document.getElementById('message').textContent = "Congratulations, you cracked the code!"
+        showCode()
+        document.getElementById('WinSound').play()  
     }    
 }
 
