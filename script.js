@@ -43,7 +43,7 @@ document.getElementById('hide').addEventListener('click', hideCode)
 
 //Setting up the submit button
 const submitGuess = () => {
-    //Checking for win, if the code is not correct, go to next turn and reset the code objec
+    //Checking for win, if the code is not correct, go to next turn and reset the code object
     turns()
     checkForWin()
     code = {}
@@ -60,10 +60,10 @@ document.getElementById('replay').addEventListener('click', replayGame)
 
 //Set the Reveal button to show the code
 const showCode = () => {
-    document.getElementById('row11col2').style.visibility = 'visible'
     document.getElementById('row11col3').style.visibility = 'visible'
     document.getElementById('row11col4').style.visibility = 'visible'
     document.getElementById('row11col5').style.visibility = 'visible'
+    document.getElementById('row11col6').style.visibility = 'visible'
 }
 document.getElementById('reveal').addEventListener('click', showCode)
 
