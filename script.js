@@ -197,8 +197,8 @@ const checkForWin = () => {
     //Taking the values from the code object and placing them in the codeWin array
     //If win is true, display the win message
     let codeWin = Object.values(code)
-    for (let i = 0; i <= codeWin.length; i++) {
-        if (codeWin[i] == win[i] && codeWin.length === win.length) {
+    for (let i = 0; i < codeWin.length; i++) {
+        if (codeWin[i] === win[i] && codeWin.length === win.length) {
             console.log(codeWin)
             console.log(win)
         } else {
