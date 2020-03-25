@@ -30,10 +30,10 @@ const turns = () => {
 
 //Set hide button to hide the code
 const hideCode = () => {
-    document.getElementById('row11col2').style.visibility = 'hidden'
     document.getElementById('row11col3').style.visibility = 'hidden'
     document.getElementById('row11col4').style.visibility = 'hidden'
     document.getElementById('row11col5').style.visibility = 'hidden'
+    document.getElementById('row11col6').style.visibility = 'hidden'
     if (turn === 2) {
         turns()
     }
