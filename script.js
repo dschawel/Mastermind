@@ -201,13 +201,13 @@ const checkForWin = () => {
         if (codeWin[i] === win[i] && codeWin.length === win.length) {
             console.log(codeWin)
             console.log(win)
+            // Code only reached if true
+            document.getElementById('message').textContent = "Congratulations, you cracked the code!"
+            showCode()
+            document.getElementById('WinSound').play()  
         } else {
             return false
         }
-        // Code only reached if true
-        document.getElementById('message').textContent = "Congratulations, you cracked the code!"
-        showCode()
-        document.getElementById('WinSound').play()  
     }    
 }
 
